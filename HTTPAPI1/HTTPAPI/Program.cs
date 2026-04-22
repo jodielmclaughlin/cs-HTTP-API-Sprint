@@ -5,7 +5,7 @@ namespace HTTPAPI
     {
         static async Task Main(string[] args)
         {
-            BooksResponse? response = await Faker.GetBooksAsync();
+            BooksResponse? response = await Faker.GetBooksAsync(3);
             foreach (var d in response.Data)
             {
                 if (d != null)

@@ -12,11 +12,11 @@ namespace HTTPAPI
     {
         private static readonly string BASE_URL = "https://fakerapi.it/api/v2/books";
 
-        public static async Task <BooksResponse?> GetBooksAsync()
+        public static async Task <BooksResponse?> GetBooksAsync(int amount)
         {
             using(HttpClient httpClient = new HttpClient())
             {
-                string url = $"{BASE_URL}";
+                string url = $"{BASE_URL}?_quantity={amount}";
 
                 try
                 {
